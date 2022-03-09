@@ -397,8 +397,6 @@ lua_convert_int!(i32);
 lua_convert_int!(u32);
 lua_convert_int!(i64);
 lua_convert_int!(u64);
-lua_convert_int!(i128);
-lua_convert_int!(u128);
 lua_convert_int!(isize);
 lua_convert_int!(usize);
 

@@ -470,7 +470,8 @@ impl<'lua> Table<'lua> {
         }
     }
 
-    pub fn is_array(&self) -> bool {
+    #[cfg(feature = "serialize")]
+    pub(crate) fn is_array(&self) -> bool {
         let lua = self.0.lua;
         unsafe {
             let _sg = StackGuard::new(lua.state);

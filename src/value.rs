@@ -219,17 +219,17 @@ impl<'lua> MultiValue<'lua> {
     }
 
     #[inline]
-    pub(crate) fn reserve(&mut self, size: usize) {
+    pub fn reserve(&mut self, size: usize) {
         self.0.reserve(size);
     }
 
     #[inline]
-    pub(crate) fn push_front(&mut self, value: Value<'lua>) {
+    pub fn push_front(&mut self, value: Value<'lua>) {
         self.0.push(value);
     }
 
     #[inline]
-    pub(crate) fn pop_front(&mut self) -> Option<Value<'lua>> {
+    pub fn pop_front(&mut self) -> Option<Value<'lua>> {
         self.0.pop()
     }
 
@@ -254,12 +254,12 @@ impl<'lua> MultiValue<'lua> {
     }
 
     #[inline]
-    pub(crate) fn drain_all(&mut self) -> iter::Rev<vec::Drain<Value<'lua>>> {
+    pub fn drain_all(&mut self) -> iter::Rev<vec::Drain<Value<'lua>>> {
         self.0.drain(..).rev()
     }
 
     #[inline]
-    pub(crate) fn refill(
+    pub fn refill(
         &mut self,
         iter: impl IntoIterator<Item = Result<Value<'lua>>>,
     ) -> Result<()> {
